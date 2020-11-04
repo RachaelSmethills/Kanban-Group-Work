@@ -1,43 +1,26 @@
-[
-    {
-        "id": 1,
+[{
         "name": "Jermey",
         "avatarUrl": "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters_opt/p-Peep-Show-Robert-Webb.jpg",
-        "projects": [
-            {
-                "id": 1,
+        "projects": [{
                 "name": "Become succesfull musician",
-                "tasks": [
-                    {
-                        "id": 1,
+                "tasks": [{
                         "desc": "learn the triangle",
                         "status": 0
                     },
                     {
-                        "id": 2,
                         "desc": "sign record deal",
                         "status": 0
                     }
                 ]
             },
             {
-                "id": 2,
                 "name": "Totally outragous",
-                "tasks": [
-                    {
-                        "id": 3,
-                        "desc": "live it large",
-                        "status": 1
-                    }
-                ]
+                "tasks": [{
+                    "desc": "live it large",
+                    "status": 1
+                }]
             }
         ]
-    },
-    {
-        "id": 2,
-        "name": "Dog",
-        "avatarUrl": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg",
-        "projects": []
     }
-    
+
 ]

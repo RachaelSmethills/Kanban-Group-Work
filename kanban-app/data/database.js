@@ -4,7 +4,7 @@ const path = require('path');
 require('dotenv').config();
 
 const connectionSettings = {
-    test: { dialect: 'sqlite', storage: 'sqlite::memory:' },
+    test: { dialect: 'sqlite', storage: 'sqlite::memory:', logging: false },
     dev: { dialect: 'sqlite', storage: path.join(__dirname, 'data.db'), logging: false },
     production: { dialect: 'postgres', protocal: 'postgres' }
 }
@@ -55,7 +55,7 @@ Task.init({
 User.hasMany(Project, { onDelete: 'cascade' });
 Project.belongsTo(User);
 
-Project.hasMany(Task, { onDelete: 'cascade' });
+Project.hasMany(Task, { onDelete: 'cascade', as: 'tasks' });
 Task.belongsTo(Project);
 
 sequelize.sync().then(async() => {

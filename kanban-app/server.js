@@ -103,26 +103,17 @@ app.get('/tasks/:id/delete', async(req, res) => {
 
 app.get('/tasks/:id', async(req, res) => {
     if (req.user) {
-        // const tasks = await Task.findAll({
-        //     where: {
-        //         projectId: Number(req.params.id)
-        //     }
-        // });
-        // console.log('Tasks i have found', tasks);
-        console.log('Loading tasks...');
-        res.render('tasklist', {});
+
+        const project = await Project.findByPk(req.params.id);
+        const tasks = await project.getTasks();
+
+        console.log('Loading tasks...', tasks);
+        res.render('tasklist', { project, tasks });
     } else {
         console.log('Redirecting..');
         res.redirect(`/`)
     }
 });
-
-app.get('/tasks/:id', async(req, res) => {
-    // const data = await getUser(req.params.id);
-    // const tasks = await data.getTasks();
-    res.render('tasklist', {});
-});
-
 
 /*
     PROJECT END POINTS
