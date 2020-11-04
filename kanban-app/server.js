@@ -115,6 +115,12 @@ app.get('/tasks/:id', async(req, res) => {
     }
 });
 
+app.get('/tasks/:id', async(req, res) => {
+    // const data = await getUser(req.params.id);
+    // const tasks = await data.getTasks();
+    res.render('tasklist', {});
+});
+
 
 /*
     PROJECT END POINTS
