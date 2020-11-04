@@ -6,16 +6,20 @@
 
 <div class="flex-grid-thirds">
     {{#each projects}}
-    <a href="/tasks/{{this.id}}">
     <div class="card col">
         <div class="card-body">
             <h5 data-id="{{this.id}}" class="card-title" contenteditable="true">{{this.name}}</h5>
-            <form method="POST" action="/project/{{this.id}}/delete">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
+            <div class="flexlayout">
+                <form method="POST" action="/project/{{this.id}}/delete">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <a href="/tasks/{{this.id}}">
+                    <button class="btn btn-primary">Tasks</button>
+                </a>
+            </div>
         </div>
+        
     </div>
-    </a>
     {{/each}}
 
     <div class="card col">

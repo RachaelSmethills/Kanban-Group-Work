@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 // To parse cookies from the HTTP Request
 app.use(cookieParser());
-const port = 3001;
+const port = process.env.PORT || 3001;
 const { User, Project, Task } = require('./data/database');
 
 const handlebars = expressHandlebars({
