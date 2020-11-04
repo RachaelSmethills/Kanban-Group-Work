@@ -101,9 +101,15 @@ app.get('/tasks/:id/delete', async(req, res) => {
     console.log('Task removed');
 });
 
-app.get('/tasks', async(req, res) => {
+app.get('/tasks/:id', async(req, res) => {
     if (req.user) {
-        res.render('tasklist', {});
+        const tasks = await Task.findAll({
+            where: {
+                projectId: Number(req.params.id)
+            }
+        });
+        console.log('Tasks i have found', tasks);
+        res.render('tasklist', { tasks });
     } else {
         res.redirect(`/`)
     }

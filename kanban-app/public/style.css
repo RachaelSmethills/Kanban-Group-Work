@@ -49,20 +49,28 @@ body {
 .bi-plus-circle, button{
     cursor: pointer;
 }
+.loginBtn{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: .25rem;
+    
+}
 
 #loginSquare{
     display:flex;
     flex-direction: column;
-    border:2px solid black;
+    background-color: white;
+    box-shadow:0 0 25px rgba(0,0,0,0.2);
     align-items: center;
-    justify-content: center;
     width:500px;
     padding:.5rem;
 }
 #createSquare{
     display:none;
     flex-direction: column;
-    border:2px solid black;
+    background-color: white;
+    box-shadow:0 0 25px rgba(0,0,0,0.2);
     width:500px;
     align-items: center;
     justify-content: center;
@@ -76,7 +84,8 @@ body {
     flex-direction: column;
     gap:10px;
 }
-.squares{
+.square{
+    margin:2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,6 +169,15 @@ li {
 }
 .avatar{
     position: relative;
+    margin:15px;
+    -webkit-transition: margin 0.5s ease-out;
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+    transition:margin 0.5s ease-out;
+}
+ 
+.avatar:hover {
+    margin-top: 2px;
 }
 .avatar img{
     border-radius: 50%;
@@ -167,7 +185,6 @@ li {
     height:6rem;
     padding:.3rem;
     object-fit: cover;
-    
 }
 .userName{
     visibility: hidden;
