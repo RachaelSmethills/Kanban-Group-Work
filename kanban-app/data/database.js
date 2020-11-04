@@ -29,7 +29,7 @@ User.init({
     name: DataTypes.STRING,
     avatarUrl: DataTypes.STRING
 
-}, { sequelize, modelName: 'user' });
+}, { sequelize, modelName: 'user', freezeTableName: true });
 
 Project.init({
     id: {
@@ -39,7 +39,7 @@ Project.init({
     },
     name: DataTypes.STRING
 
-}, { sequelize, modelName: 'project' });
+}, { sequelize, modelName: 'project', freezeTableName: true });
 
 Task.init({
     id: {
@@ -50,7 +50,7 @@ Task.init({
     desc: DataTypes.STRING,
     status: DataTypes.NUMBER
 
-}, { sequelize, modelName: 'task' });
+}, { sequelize, modelName: 'task', freezeTableName: true });
 
 User.hasMany(Project, { onDelete: 'cascade' });
 Project.belongsTo(User);
