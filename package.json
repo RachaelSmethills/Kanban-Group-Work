@@ -8,7 +8,7 @@
         "start": "npm run build && node ./kanban-app/server.js",
         "local": "npm run build && NODE_ENV=dev node ./kanban-app/server.js",
         "webpack": "webpack server",
-        "heroku-prebuild": "npm install --dev",
+        "start-prebuild": "npm install --dev",
         "build": "webpack --mode production --config ./webpack.config.js"
     },
     "repository": {
