@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 // To parse cookies from the HTTP Request
 app.use(cookieParser());
-const port = 3001;
+const port = process.env.PORT || 3001;
 const { User, Project, Task } = require('./data/database');
 
 const handlebars = expressHandlebars({
@@ -101,12 +101,24 @@ app.get('/tasks/:id/delete', async(req, res) => {
     console.log('Task removed');
 });
 
-app.get('/tasks', async(req, res) => {
+app.get('/tasks/:id', async(req, res) => {
     if (req.user) {
-        res.render('tasklist', {});
+        const tasks = await Task.findAll({
+            where: {
+                projectId: Number(req.params.id)
+            }
+        });
+        console.log('Tasks i have found', tasks);
+        res.render('tasklist', { tasks });
     } else {
         res.redirect(`/`)
     }
+});
+
+app.get('/tasks/:id', async(req, res) => {
+    // const data = await getUser(req.params.id);
+    // const tasks = await data.getTasks();
+    res.render('tasklist', {});
 });
 
 

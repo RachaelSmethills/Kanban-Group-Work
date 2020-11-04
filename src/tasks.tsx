@@ -175,6 +175,7 @@ export default class TaskComponent extends Component
         : <div>No done tasks!</div>
         }
         </section>
+        
     </div>
 
     <form class="col align-self-center pull-bottom"id="newTask"onsubmit={e => this.run('addTask', e)} style="margin-top: 15px;">
