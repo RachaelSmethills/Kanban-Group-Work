@@ -49,6 +49,13 @@ body {
 .bi-plus-circle, button{
     cursor: pointer;
 }
+.loginBtn{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: .25rem;
+    
+}
 
 #loginSquare{
     display:flex;
